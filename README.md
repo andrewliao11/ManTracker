@@ -4,7 +4,7 @@ Use Nitrogen6x and Boe-Bot Car to implement ManTracking task
 Build a car that can track person. We can set the car in the site that shouldn't be intruded. Once some people intrude that area, the car will track the person and beep.   
 Use the techniques of skin detection by opencv, and transmit signal to the Boe-Bot car via Xbee. Beep once the car is near the guy! 
 ## Hardware Requirement 
-- 1 Boe-Bot Car
+- 1 Boe-Bot Car   
 ![](https://github.com/andrewliao11/ManTracker/blob/master/assets/boe-bot%20car.jpg?raw=true)
 - 1 Nitrogen6x board with opencv
 - 2 Xbee
