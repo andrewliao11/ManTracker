@@ -13,7 +13,9 @@ Use the techniques of skin detection by opencv, and transmit signal to the Boe-B
 
 ## Software requirement
 - [Opencv](http://opencv.org) on Nitrogen6x
+      - [installatino guide](https://github.com/andrewliao11/ManTracker/blob/master/Propeller-Boe-Bot-Receiver/README.md) 
 - [qt](https://www.qt.io) for compileing code for Boe-Bot car
+      - [installatino guide](https://github.com/andrewliao11/ManTracker/blob/master/skin_detection/README.md) 
 
 
 ## Usage
