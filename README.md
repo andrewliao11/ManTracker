@@ -33,7 +33,32 @@ For Boe-Bot car
   ![](http://learn.parallax.com/sites/default/files/content/propeller-c-tutorials/simple-circuits/piezo-beep/circuit-PiezoBeep.jpg)
   ![](https://github.com/andrewliao11/ManTracker/blob/master/assets/XBee_BOE.png?raw=true)
   4. run the code!
-  
-## Demo 
-![](https://github.com/andrewliao11/ManTracker/blob/master/assets/demo.png?raw=true)
-  
+
+## Algorithm behind ManTracker
+The ManTracker uses skin detection, detect human skin color through webcam. Once the response of skin is higher than the threshold, the Xbee will transmit the corresponding signal to the Boe-Bot car. Once the car is near the intruder, the car will stop and beep.
+
+skin detection algorithm:
+1. access the pixel from the webcam and turn from the RGB color space to HSV space.
+2. check if the color lies in the certain range
+```
+//pseudocode of skin detection
+for(int i = 0; i < src.rows; i++) {
+    for(int j = 0; j < src.cols; j++) {
+        bool c = R3(src_H,src_S,src_V);
+        if(!(a&&b&&c)) dst.ptr<Vec3b>(i)[j] = cblack;
+		// the camera range in Nitrogen6x is 250~1280
+        else{
+            count ++;
+            if (j<500&&j>250) count_left ++;
+            else if (j<1280&&j>1030) count_right ++;
+            else if(j<1030&&j>500) count_middle ++;
+        }
+    }
+}
+```
+   
+## Demo picture   
+![](https://github.com/andrewliao11/ManTracker/blob/master/assets/demo.png?raw=true)   
+   
+## Reference 
+- [使用OpenCV做膚色偵測 ( Skin Color Detection using OpenCV )](http://ccw1986.blogspot.tw/2012/11/opencvycbcr.html)
